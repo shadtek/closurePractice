@@ -45,11 +45,20 @@ caller('435-215-9248')
 */
 
   //Code Here
-  var count = makeCounter();
-  count() // 1
-  count() // 2
-  count() // 3
-  count() // 4
+var makeCounter = function() {
+  var start = 1
+  return function() {
+    console.log(start)
+    start++
+  }
+}
+
+
+var count = makeCounter();
+count() // 1
+count() // 2
+count() // 3
+count() // 4
 
 
 
@@ -64,6 +73,20 @@ caller('435-215-9248')
   After the function has been called N number of times, console.log('STAHHP');
 */
 
+var firstFn = function(secondFn, n) {
+  return function() {
+    for (var i = 0; i < n; i++) {
+      secondFn()
+    };
+    console.log('STAHHP')
+  }
+}
 
+var secondFn = function() {
+  console.log('ZOMG')
+}
+
+var run = firstFn(secondFn, 5)
+run()
 
 
