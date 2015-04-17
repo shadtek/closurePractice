@@ -21,7 +21,6 @@ inner()
 //Next problem
 
 
-
 var callFriend = function(){
   var friend = 'Jake';
   function callF(number){
@@ -34,8 +33,8 @@ var callFriend = function(){
 //Do what you need to do in order to call your function and get 'Calling Jake at 435-215-9248' in your console.
 
   //Code Here
-
-
+var caller = callFriend()
+caller('435-215-9248')
 
 //Next Problem
 
